@@ -268,9 +268,10 @@ def c_sorter(m,p):
 #Code19 - Sum of all the elements ending with '3'
 
 def n_sum(m,x):
+    l = 5-m
     k = []
     for v in x:
-        if (v+2)%5 == 0:
+        if (v+l)%5 == 0:
             k.append(v)
         else:
             continue
@@ -278,9 +279,6 @@ def n_sum(m,x):
 
 
 #Code20 - Shift Postive to right, Negative to left
-
-
-#Code21 - To swap elements with the next element divisible by 7
 def ele_org(x):
     t = []
     for l in x:
@@ -294,6 +292,9 @@ def ele_org(x):
                 v+=1
     return t
 
+
+#Code21 - To swap elements with the next element divisible by 7
+
 #Code22 - Tuple creator
 def t_c(c):
     c == str
@@ -304,4 +305,3 @@ def t_c(c):
 
 
 #Code24 - Country Capital & Currency data manager
-print(n_sum([3,4,-5,6,3,2,1]))
