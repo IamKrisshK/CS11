@@ -267,6 +267,15 @@ def c_sorter(m,p):
 
 #Code19 - Sum of all the elements ending with '3'
 
+def n_sum(m,x):
+    k = []
+    for v in x:
+        if (v+2)%5 == 0:
+            k.append(v)
+        else:
+            continue
+    return sum(k)
+
 
 #Code20 - Shift Postive to right, Negative to left
 
@@ -295,4 +304,4 @@ def t_c(c):
 
 
 #Code24 - Country Capital & Currency data manager
-print(ele_org([-1,3,-4,-5,6,3,2,1]))
+print(n_sum([3,4,-5,6,3,2,1]))
