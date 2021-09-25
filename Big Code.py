@@ -257,6 +257,13 @@ def ele_freq(x):
 
 #Code18 - Sort strings with 'A' from a list
 
+def c_sorter(m,p):
+    l = []
+    for b in p:
+        if m not in list(b):
+            l.append(b) 
+    return l
+
 
 #Code19 - Sum of all the elements ending with '3'
 
@@ -265,17 +272,27 @@ def ele_freq(x):
 
 
 #Code21 - To swap elements with the next element divisible by 7
-
+def ele_org(x):
+    t = []
+    for l in x:
+        if l in t == False:
+            t.append(l)
+            for v in range(0,len(t)):
+                if l<t[v]:
+                    t.insert(v-1,l)
+                elif l>t[v]:
+                    t.insert(v+1,l)
+                v+=1
+    return t
 
 #Code22 - Tuple creator
-
+def t_c(c):
+    c == str
+    c = tuple(c)
+    return c
 
 #Code23 - Class record table
 
 
 #Code24 - Country Capital & Currency data manager
-
-
-
-print(ptrn_no(4))
-print(chr_counter('0 0 1 1 0 1 2 1 2 2 0 1 2 3 1 2 3 2 3 3 0 1 2 3 4 1 2 3 4 2 3 4 3 4 4'))
+print(ele_org([-1,3,-4,-5,6,3,2,1]))
