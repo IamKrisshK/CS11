@@ -295,6 +295,8 @@ def ele_org(x):
 
 #Code21 - To swap elements with the next element divisible by 7
 
+
+
 #Code22 - Tuple creator
 def t_c(c):
     c == str
