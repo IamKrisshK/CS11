@@ -294,10 +294,20 @@ def ele_org(x):
 
 
 #Code21 - To swap elements with the next element divisible by 7
-
-
+def lst_swp(l,m,n):
+    for v in m:
+        if v%l == 0:
+            k = m.index(v)
+            m.pop(k)
+            for x in range(0,len(n)):
+                m.insert(k,n[x])
+                x+=1            
+        else:
+            continue        
+    return m
 
 #Code22 - Tuple creator
+
 def t_c(c):
     c == str
     c = tuple(c)
@@ -307,3 +317,5 @@ def t_c(c):
 
 
 #Code24 - Country Capital & Currency data manager
+
+print(lst_swp(7,[2,7,9,14,5,4,21],[1,2,3,4,5]))
