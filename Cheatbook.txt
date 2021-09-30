@@ -1,0 +1,5 @@
+add
+subtract
+multiply
+square root
+cube root

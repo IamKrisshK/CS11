@@ -315,7 +315,20 @@ def t_c(c):
 
 #Code23 - Class record table
 
+import tabulate
+def tbl(p):
+    v = ['Name', 'Class']
+    k = [v]
+    while p=='Y':
+        l = input("Enter the name: ")
+        s = input("Enter the class: ")
+        d = [l,s]
+        k.append(d)
+        p = input('Y/N:')
+    if p =='N':
+        print(tabulate(k))
+
 
 #Code24 - Country Capital & Currency data manager
 
-print(lst_swp(7,[2,7,9,14,5,4,21],[1,2,3,4,5]))
+print(tbl('Y'))
