@@ -89,14 +89,13 @@ def is_perf(k):
 #Code9 - Sum of factorial series
 def factorials(x):
     l = 1
-    for c in range (0,x):
+    for c in range (2,x+1):
         if c == 0 or c==1:
             l = 1        
-        elif x%c == 0:
+        else:
             l*=c
-        c+=1
-    return c
-
+    return l
+ 
 def fact_series(x,n):
     o = 1
     for v in range(1,n+1):
@@ -279,21 +278,45 @@ def n_sum(m,x):
 
 
 #Code20 - Shift Postive to right, Negative to left
-def ele_org(x):
-    t = []
-    for l in x:
-        if l in t == False:
-            t.append(l)
-            for v in range(0,len(t)):
-                if l<t[v]:
-                    t.insert(v-1,l)
-                elif l>t[v]:
-                    t.insert(v+1,l)
-                v+=1
-    return t
+
+def printArray(A, size):
+    for i in range(size):
+        print(A[i], end=" ")
+    print()
+def merge(arr, l, m, r):
+    i, j, k = 0, 0, 0
+    n1 = m - l + 1
+    n2 = r - m
+    L = [arr[l + i] for i in range(n1)]
+    R = [arr[m + 1 + j] for j in range(n2)]
+    i = 0
+    j = 0
+    k = l 
+    while (i < n1 and L[i] < 0):
+        arr[k] = L[i]
+        k += 1
+        i += 1
+    while (j < n2 and R[j] < 0):
+        arr[k] = R[j]
+        k += 1
+        j += 1
+    while (i < n1):
+        arr[k] = L[i]
+        k += 1
+        i += 1
+    while (j < n2):
+        arr[k] = R[j]
+        k += 1
+        j += 1
+def RearrangePosNeg(arr, l, r):
+     if(l < r):
+        m = l + (r - l) // 2
+        RearrangePosNeg(arr, l, m)
+        RearrangePosNeg(arr, m + 1, r)
+        merge(arr, l, m, r)
 
 
-#Code21 - To swap elements with the next element divisible by 7
+#Code21 - To swap elements with the next element divisible by n
 def lst_swp(l,m,n):
     for v in m:
         if v%l == 0:
@@ -314,7 +337,7 @@ def t_c(c):
     return c
 
 #Code23 - Class record table
-'''
+
 import tabulate
 def tbl(p):
     v = ['Name', 'Class']
@@ -328,27 +351,21 @@ def tbl(p):
     if p =='N':
         print(tabulate(k))
 
-'''
 #Code24 - Country Capital & Currency data manager
 
-def ccc(n):
-    l = 1
-    dik = dict()
-    while n>l:
-        c = input('Enter Country Name: ')
-        cur = input('Enter the currency: ')
-        cap = input('Enter the capital: ')
-        dik[c] = (cap, cur)
-        l+=1
-
-    i = dik.keys()
-    print('\n Country \t\t\t Capital \t\t\t Currency')
-    for v in i:
-        z = dik[v]
-        print('\n', v, '\t\t\t', end = ' ')
-        for b in z:
-            print (b, end = '\t\t\t')
-
+def dik():
+    x = int(input('Enter the number: '))
+    d = dict()
+    while x>0:
+        c = input('Enter the country: ')
+        ca = input('Enter the capital: ')
+        cu = input('Enter the currency: ')
+        d[c] = ca, cu
+        x-=1
+    else:
+        print( 'Country \t\t Capital \t\t Currency', end = '\n')
+        for k in d:
+            print (k , d[k], sep='\t\t')
 #Code25 - Compound interest calculator
 
 def ci_cal(p,r,t):
@@ -361,5 +378,4 @@ def ci_cal(p,r,t):
         l = (p*(1+(r/365)/100)**(365*t)) - p
     if x == 'Monthly':
         l = (p*(1+(r/12)/100)**(12*t)) - p
-    return f'Your total compunded interest is : {l}'
-print(ci_cal(10000, 10, 5))
+    return f'Your total compunded interest is : {l+p}'
