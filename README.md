@@ -4,7 +4,7 @@ List of functioning programs:
 - Everything under `/patterns`
 - Everything under `/term\ 1`
 
-##Usage 
+## Usage 
 1. Clone the repo
  ```
  git clone https://github.com/rishabruh/CS11
