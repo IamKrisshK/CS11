@@ -1,3 +1,4 @@
+print('Type "help" to view commands ')
 command = ''
 started = False
 while True:
