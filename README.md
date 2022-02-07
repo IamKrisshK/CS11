@@ -19,4 +19,4 @@ List of functioning programs:
  ```
 
 ### Credits
-[Link to Original fork](https://github.com/IamKrisshK/CS11)
+[Link to Original repository](https://github.com/IamKrisshK/CS11)
