@@ -82,6 +82,7 @@ def pyramid(x):
                 print(n, end = ' ')
                 n+=1
         print()
+        
 def pyr_(x):
     for j in range(1,x+1):
         n = 1
